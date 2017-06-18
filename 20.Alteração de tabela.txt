@@ -1,0 +1,18 @@
+-Adicionar coluna
+ALTER TABLE cliente ADD (Ie_Fisica_Jurudica Char(1));
+
+-Modificar coluna
+ALTER TABLE cliente MODIFY (Ds_Endereco Varchar(50));
+
+-Excluir coluna
+ALTER TABLE cliente DROP COLUMN (VL-COMPRA);
+
+
+-Desabilitar restrição(constraint) de uma tabela
+ALTER TABLE cliente DISABLE CONSTRAINT un_empresa;
+
+-Acrescentar restrição a uma tabela
+ALTER TABLE cliente ADD (CONSTRAINT CK_CLIENTE CHECK (Ie_Fis_Jur in ('F','J')));
+
+-Excluir restrição de uma tabela
+ALTER TABLE cliente DROP CONSTRAINT UN_PAIS;

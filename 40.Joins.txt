@@ -1,0 +1,35 @@
+--Inner join ou EquiJoin
+SELECT F.nome, T.numeromov 
+FROM TMOV T, FCFO F 
+WHERE T.codcfo=F.codcfo
+
+SELECT f.nome, t.numeromov 
+FROM tmov t INNER JOIN fcfo f USING (codcfo)
+
+SELECT f.nome, t.numeromov 
+FROM tmov t INNER JOIN fcfo f ON f.codcfo=t.codcfo
+
+SELECT f.nome, t.numeromov,i.idprd 
+FROM tmov t INNER JOIN fcfo f    ON f.codcfo=t.codcfo
+                  JOIN titmmov i ON i.idmov=t.idmov
+
+--Outer Join
+SELECT f.codcfo, l.idlan
+FROM fcfo f, flan l
+WHERE f.codcfo=l.codcfo(+)
+
+SELECT f.codcfo, l.idlan
+FROM fcfo f LEFT OUTER JOIN flan l ON f.codcfo=l.codcfo
+
+--Self Join
+SELECT f.nome as funcionario, f2.nome as gerente
+FROM empregado f, empregado f2
+WHERE f.cod_funcionario=f2.cod_gerente
+
+SELECT f.nome as funcionario, f2.nome as gerente
+FROM empregado f INNER JOIN empregado f2 ON (f.cod_funcionario=f2.cod_gerente)
+
+--NonEquiJoin
+SELECT A.nm_aluno, N.nr_nota, C.conceito
+FROM Aluno A, Nota N, Conceito C
+WHERE A.cd_aluno=n.cd_aluno AND N.nr_nota BETWEEN C.inicio AND C.fim

@@ -1,0 +1,4 @@
+CREATE ROLE venda;
+GRANT create table, create view, create session TO venda;
+
+Obs:. Os orivilégios de objetos REFERENCES, INDEX, READ e WRITE não podem ser concedidos a ROLES.

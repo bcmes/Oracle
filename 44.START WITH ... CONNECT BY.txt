@@ -1,0 +1,13 @@
+/*Essa estrutura permite retornar para cada linha o nível hierárquico dela em re
+lação a seu pai. Utilizada em consultas envolvendo tabelas que possuem um auto-
+relacionamento*/
+
+SELECT 
+campo
+,LEVEL --> identifica o nível em que a linha se encontra dentro da hierarquia estabelecida
+,SYS_CONNECT_BY_PATH(campo,'/') -->Retorna o caminho do valor da coluna da raiz até o nó
+                                --,com os valores das colunas separadas por / ou qualquer caractere especificado
+FROM ...
+WHERE ...
+START WITH ... --> Permite especificar a partir de que linha a relação será estabelecida
+CONNECT BY PRIOR ... -->Permite especificar o campo que faz ligação entre os níveis

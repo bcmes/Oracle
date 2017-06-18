@@ -1,0 +1,3 @@
+select * from all_users
+
+/*Lista os usuarios existentes do banco.Somente irá mostrar os usuários que o usuário conectado tem privilégios*/

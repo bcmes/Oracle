@@ -1,0 +1,44 @@
+Maneiras:
+
+1) Somente é valido para PK simples.
+
+CREATE TABLE Cliente
+(cd_cliente     number(4) PRIMARY KEY,
+ nm_cliente     varchar2(65),
+ ds_endereco    varchar2(50),
+ Cd_municipio   number(5)
+ Sg_estado      char(2),
+ nr_cep         varchar2(8),
+ nr_ddd         number(3),
+ nr_fone        number(7),
+ Ie_sexo        char(1)
+)
+
+2) Idem ao anterior, mas com a especificação de um nome padronizado.
+
+CREATE TABLE Cliente
+(cd_cliente     number(4) CONSTRAINT PK_CLIENTE PRIMARY KEY,
+ nm_cliente     varchar2(65),
+ ds_endereco    varchar2(50),
+ Cd_municipio   number(5)
+ Sg_estado      char(2),
+ nr_cep         varchar2(8),
+ nr_ddd         number(3),
+ nr_fone        number(7),
+ Ie_sexo        char(1)
+)
+
+3) A maneira mais organizada.
+
+CREATE TABLE Cliente
+(cd_cliente     number(4),
+ nm_cliente     varchar2(65),
+ ds_endereco    varchar2(50),
+ Cd_municipio   number(5)
+ Sg_estado      char(2),
+ nr_cep         varchar2(8),
+ nr_ddd         number(3),
+ nr_fone        number(7),
+ Ie_sexo        char(1),
+CONSTRAINT PK_CLIENTE PRIMARY KEY (Cd_cliente[,campo,campo])
+)

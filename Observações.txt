@@ -1,0 +1,3 @@
+Obs1: É preferível usar a comparação utilizando o operador EXISTS, ao invés de IN
+pois há um ganho em desempenho.
+

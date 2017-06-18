@@ -1,0 +1,10 @@
+Exemplo1: Comparação com multiplas colunas, veja:
+
+SELECT nm_produto
+FROM produto
+WHERE (cd_produto, vl_custo_medio) in (SELECT cd_produto, vl_unitario
+                                       FROM nota_fiscal)
+
+Exemplo2: Podemos ter subquerys na clasula FROM, as informações buscadas serão do conjunto de dados do FROM ; SELECT * FROM (SELECT NOTA,ITEM,VALOR FROM VW_NOTA)
+
+Exemplo3: Podemos ter subquerys na clasula SELECT

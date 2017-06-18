@@ -1,0 +1,23 @@
+CREATE VIEW nome [nome_coluna_1,nome_coluna_2,...] AS SELECT ...
+
+CREATE VIEW vw_fcfo AS SELECT codcfo,nome FROM FCFO
+
+DROP VIEW nome_view;
+
+/*USER_VIEWS: Essa é a tabela que guarda informações sobre as visões
+--View_Name: Nome da view
+--Text_Length: Número de caracteres que possui o comando SELECT que originou a view
+--Text: Comando SELECT que originou a visão
+*/
+SELECT * FROM USER_VIEWS ORDER BY VIEW_NAME
+
+/*MATERIALIZED VIEW: Esse tipo de visão normalmente é aplicada a visões com SELECT de
+alta complexidade, degradando a performance das consultas. Seu conteúdo fica armazanado em uma tabela.
+
+Refresh: Pode ser completo ou incremental.
+*/
+CREATE MATERIALIZED VIEW nome
+BUILD DEFERRED / IMMEDIATE --BUILD permite especificar se a visão será populada logo após sua criação(IMMEDIATE) ou sob comando manual (DEFFERED)
+REFRESH COMPLETE / FAST ON DEMAND --REFRESH especifica se, quando atualizada, a visão será totalmente repovoada(COMPLETE) ou terá somente os novos valores inclusos(FAST)
+ENABLE QUERY REWRITE --QUERY REWRITE quando se utiliza o otimizador por custo, avalia se uma consulta deve utilizar a tabela original ou a visão para um acesso mais rápido
+AS SELECT ...

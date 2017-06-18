@@ -1,0 +1,1 @@
+,to_char(sum(f.valorbaixado),'999g999g990d00') as valor

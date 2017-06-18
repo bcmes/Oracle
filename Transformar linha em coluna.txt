@@ -1,0 +1,34 @@
+select job, deptno, count(*) cnt
+from emp
+group by job, deptno
+
+JOB           DEPTNO   COUNT(*)
+——— ———- ———-
+ANALYST           20          2
+CLERK             10          1
+CLERK             20          2
+CLERK             30          1
+MANAGER           10          1
+MANAGER           20          1
+MANAGER           30          1
+PRESIDENT         10          1
+SALESMAN          30          4
+
+
+select job,
+max( decode( deptno, 10, cnt, null ) ) dept_10,
+max( decode( deptno, 20, cnt, null ) ) dept_20,
+max( decode( deptno, 30, cnt, null ) ) dept_30,
+max( decode( deptno, 40, cnt, null ) ) dept_40
+from ( select job, deptno, count(*) cnt
+       from emp
+       group by job, deptno )
+group by job
+
+JOB          DEPT_10    DEPT_20    DEPT_30    DEPT_40
+——— ———- ———- ———- ———-
+ANALYST                       2
+CLERK              1          2          1
+MANAGER            1          1          1
+PRESIDENT          1
+SALESMAN                                 4

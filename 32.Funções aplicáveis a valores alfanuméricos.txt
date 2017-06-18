@@ -1,0 +1,23 @@
+-INITCAP(char) : Retorna a inicial de cada palavra em maiusculo
+
+-LOWER(char) : Retorna tudo em minisculo
+
+-UPPER(char) : Retorna tudo em maiusculo
+
+-LPAD(campo_char, tamanho [,char_preenchimento]) : Retorna o campo no tamanho especificado alinhado a direita e preenchido a espquerda com o char_preenchimento informado
+
+-RPAD(campo_char, tamanho [,char_preenchimento]) : Idem acima porém alinhado a direita com caracteres de complemento a esquerda
+
+-LTRIM(campo_char, [,conjunto_caracteres]) : Retorna o campo sem o conjunto de caracteres informados, somente para esquerda
+
+-RTRIM(campo_char, [,conjunto_caracteres]) : idem acima porém para direita
+
+-SUBSTR(char, posicao_inicial [,tamanho]) : Retorna o pedaço desejado da string
+
+-INSTR(char1,char2 [, posicao_inicial, ocorrência]) : Retorna a posicao da string solicitada
+
+-REPLACE(char, texto_Antigo[,texto_novo]) : Localiza e troca
+
+-TRANSLATE(char,Conjunto_caracteres_antigo,Conjunto_caracteres_novo) : Idem acima, porém, O 1° elemento do 1° conjunto é substituido pelo 1° elemento do 2° conjunto e assim seque.
+
+-LENGTH(char) : Qtd de caracteres

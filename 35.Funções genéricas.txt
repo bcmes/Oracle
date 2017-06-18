@@ -1,0 +1,19 @@
+-DECODE(campo,comparacao1,valor1[,comparacaoN,valorN][,valor_default]) : Retorna um valor decodificado de acordo com uma comparação, é tipo o Case.
+
+-CASE [expressao]
+  WHEN condicao THEN valor
+  WHEN condicao THEN valor
+  ELSE valor
+ END : Case.
+
+-NullIf(expressao1,expressao2) : Compara duas expressoes e retorna nulo se forem iguais ou o valor da primeira, caso não sejam iguais.
+
+-GREATEST(valor[,valor[,...]]) : Retorna o maior valor da lista informada.
+
+-LEAST(valor[,valor[,...]]) : Retorna o menor valor da lista informada.
+
+-NVL(valor,valor_se_nulo) : Retorna o valor especificado caso o campo seja nulo. Obs: calculos com valor nulo no oracle, resulta em nulo.
+
+-NVL2(valor1,valor2,valor3) : Retorna o valor3 caso o valor1 seja nulo senao retorna o valor2.
+
+-USER - Retorna o usuário corrente.

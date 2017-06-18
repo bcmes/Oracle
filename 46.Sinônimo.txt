@@ -1,0 +1,4 @@
+CREATE [PUBLIC] SYNONYM sinônimo FOR objeto;
+
+exemplo:
+CREATE PUBLIC SYNONYM FCFO FOR FCFO;

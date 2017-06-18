@@ -1,0 +1,9 @@
+-ABS(number) : Valor absoluto
+-CEIL(number) : O número inteiro >= ao número do argumento, veja: CEIL(15.1) = 16
+-FLOOR(number) : O maior número inteiro <= ao argumento, veja FLOOR(15.1) = 15
+-MOD(dividendo, divisor) : Resto da divisao
+-POWER(base,expoente) : Valor da pontenciação
+-SQRT(number) : Raiz quadrada
+-ROUND(number,[casas_decimais]) : arredonda para n casas decimais
+-TRUNC(number,[casas_decimais]) : Trunca para n casas decimais
+-SIGN(number) : 1 para valores maiores que zero, 0 para zero e -1 para menores que zero

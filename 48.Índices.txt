@@ -1,0 +1,34 @@
+CREATE [BITMAP] [UNIQUE] INDEX nome_do_índice
+ON nome_tabela
+(nome_coluna ASC/DESC[,nome_coluna ASC/DESC]...])
+
+exemplo:
+CREATE INDEX ind_fone ON cliente(nr_fone);
+
+--Tabelas de controle--
+USER_INDEXES : Informações sobre os índices
+    TABLE_OWNER : Usuário que criou a tabela à qual o índice se refere 
+    TABLE_NAME : Tabela à qual o índice se refere
+USER_IND_COLUMNS : Informações sobre as colunas que compõem o índice
+    TABLE_NAME : Tabela à qual o índice se refere
+    COLUMN_NAME : nome da coluna que compõem o índice
+    COLUMN_POSITION : ordenacao da coluna dentro do indice
+    COLUMN_LENGTH : comprimento da coluna
+    
+--Deleta indice
+DROP INDEX nome_indice
+
+--recriacao
+ALTER INDEX nome_indice REBUILD --rebuild, recria o indice
+TABLESPACE nome_tablespace --permite mudar a tablespace em que o indice se encontra
+
+exemplo:
+ALTER INDEX ind_fone REBUILD;
+
+--O MOVE pode ser utilizado para duas finalidades: mover uma tabela para outra tablespace em que
+--a tabela se encontra e/ou reorganizar e defragmentar a tabela.
+comando:
+ALTER TABLE nome_indice MOVE TABLESPACE nome_tablespace
+
+exemplo:
+ALTER TABLE cliente MOVE;

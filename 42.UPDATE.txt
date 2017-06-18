@@ -1,0 +1,3 @@
+UPDATE EMP A SET (SAL,COMM) = (SELECT 1.1*AVG(SAL), 1.5*AVG(COMM)
+                               FROM EMP B
+                               WHERE A.DEPTNO=B.DEPTNO)

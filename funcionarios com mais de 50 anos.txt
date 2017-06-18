@@ -1,0 +1,34 @@
+select 
+f.chapa
+,f.nome
+,TRUNC(MONTHS_BETWEEN(sysdate,p.dtnascimento)/12) AS IDADE
+,(CASE  WHEN F.CODSECAO LIKE '1.80%' THEN '01 - PRESI'
+        WHEN F.CODSECAO LIKE '1.81%' AND f.CODSECAO <> '1.81.03.00.07' THEN '02 - DETEC'
+        WHEN F.CODSECAO = '1.81.03.00.07' THEN '05 - PETROBRAS'
+        WHEN F.CODSECAO LIKE '1.82%' THEN '03 - DEPED'
+        WHEN F.CODSECAO LIKE '1.83%' THEN '04 - SUFRAMA'
+        WHEN F.CODSECAO LIKE '1.84.01%' THEN '06 - INFRAERO'
+        WHEN F.CODSECAO LIKE '1.84.02%' THEN '07 - PROCOMP'
+        ELSE F.CODSECAO END) AS LOTACAO
+,DECODE(codsituacao,
+'Z','Z-Admissao prox.mes',
+'T','T-Af.Ac.Trabalho',
+'P','P-Af.Previdencia',
+'I','I-Apos.Invalidez',
+'A','A-Ativo',
+'V','V-Aviso Previo',
+'X','X-C/Dem. no mes',
+'D','D-Demitido',
+'O','O-Doença Ocupacional',
+'F','F-Ferias',
+'E','E-Licença Mater.',
+'W','W-Licença Mater.Compl. 180 dias',
+'R','R-Licença Remun.',
+'L','L-Licença s/venc',
+'S','S-Mandato Sindical',
+'U','U-Outros',
+'M','M-Serv.Militar') as situacao
+from pfunc f inner join ppessoa p on p.codigo=f.codpessoa 
+where f.codsituacao<>'D'
+and TRUNC(MONTHS_BETWEEN(sysdate,p.dtnascimento)/12)>=50
+order by 3

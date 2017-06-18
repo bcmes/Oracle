@@ -1,0 +1,2 @@
+TO_DATE (char [,format_char]) : Converte de char para date.
+Veja: Select TO_DAtE('20/04/1998','dd/mm/yyyy') from dual;

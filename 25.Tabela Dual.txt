@@ -1,0 +1,1 @@
+Tabela Dual - usada apenas para completar a sintaxe SQL

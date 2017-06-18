@@ -1,0 +1,2 @@
+Distinct - fará com que as linhas duplicadas não apareçam
+ALL - todas as linhas aparecerão, inclusive duplicadas

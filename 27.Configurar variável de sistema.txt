@@ -1,0 +1,35 @@
+SET VARIÁVEL_DE_SISTEMA valor
+
+NO SQL*PLUS:
+1. FEEDBACK - Mensagens retornadas após cada execução. Pode definir a exibição ON ou a não exibição OFF ou a exibição apartir de determinada quantidade de linhas n.
+
+SET FEEDBACK n / ON / OFF
+
+2. SPACE - definir o numero de espaços em branco entre as colunas de uma seleção
+
+SET SPACE numero_de_espeço_entre_as_colunas
+
+3.LineSize - Define o tamanho da linha que será visualizada, que pode ser truncada ou apresentada na próxima linha, o que dependerá da variável WRAP.
+
+SET LINESIZE numeros de caracteres de uma linha
+
+4.Heading - habilita ou desabilita a visualização dos titulos das colunas
+
+SET HEADING ON / OFF
+
+5.PageSize - Define o numero de linhas para uma pagina
+
+SET PageSize numeros_de_linha_de_uma_pagina
+
+6.Wrap - Esta variável trabalha em conjunto com a determinação do tamanho da linha na variável LINESIZE, ou seja, se o valor atribuído para WRAP for ON e a seleção ultrapassar o tamanho da linha, o restante da linha aparecerá na linha de baixo; caso contrário será truncado.
+
+SET WRAP ON / OFF
+
+7.UNDERLINE - Permite a visualização ou não do sublinhado  de uma seleção
+
+SET UNDERLINE c / ON / OFF
+
+8.NULL - Especifica a string que será apresentada ao usuário quando o valor de alguma coluna for nulo
+
+SET NULL "texto" ou SET NULL '' volta ao estado original
+

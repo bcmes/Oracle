@@ -1,0 +1,3 @@
+REVOKE nome_do_privilégio [,vários nomes de privilégios]
+ON nome_do_objeto
+FROM [nome_de_usuário [,vários nomes de usuário] / ROLE / PUBLIC]

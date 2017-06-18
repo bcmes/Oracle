@@ -1,0 +1,35 @@
+USER_CONSTRAINTS : Informações sobre as constraints que foram criadas para uma tabela são armazenadas nesta tabela de controle, atualizada automaticamente, veja :
+
+OWNER : usuário que criou a restrição
+CONSTRAINT_NAME : Nome da restrição
+CONSTRAINT_TYPE : tipo da restrição
+	P : primary key
+	R : foreign key
+	C : check
+	U : unique
+TABLE_NAME : tabela a que a restrição se refere
+SEARCH_CONDITION : utilizada em restrições do tipo Check para especificar o dominio permitido ou a condição aceita
+R_OWNER : utilizada em restrições do tipo Foreign Key para indicar qual o usuário que criou a restrição de Primary Key na tabela referenciada
+R_CONSTRAINT_NAME : utilizada em restrições do tipo Foreign Key para indicar qual a restrição de Primery Key na tabela referenciada.
+STATUS : indica se a restrição está ou não habilitada
+
+
+USER_CONS_COLUMNS : Além dessas informações, podem ser recuperados dados sobre as colunas envolvidas em cada restrição, veja:
+
+OWNER : Usuário que criou a restrição
+cONSTRAINT_NAME : nome da restrição
+TABLE_NAME : tabela a que a restrição se refere
+COLUMN_NAME : coluna envolvida na restrição
+POSITION : sequência da coluna dentro da restrição
+
+*Exemplo: Este exemplo retorna as colunas que fazem parte da chave primária de uma tabela.
+SELECT CC.COLUMN_NAME
+FROM USER_CONSTRAINTS C, USER_CONS_COLUMNS CC
+WHERE C.CONSTRAINT_NAME = CC.CONSTRAINT_NAME
+AND C.TABLE_NAME = 'NOME_DA_TABELA'
+AND C.CONSTRAINT_TYPE ='P'
+
+-> O "USER_..." apresenta apenas informações criadas pelo usuário atual.
+-> Para verificar restrições criadas por outros usuários mais disponíveis ao usuário conectado basta trocar o "USER_..." por "ALL_..."
+
+-->Informações sobre as tabelas criadas e disponíveis para o usuário conectado, USER_TABLES ou ALL_TABLES ou TAB

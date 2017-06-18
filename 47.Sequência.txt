@@ -1,0 +1,20 @@
+/*Sequências são estruturas criadas no BD que retornam um valor diferente a cada acesso*/
+CREATE SEQUENCE nome
+[START WITH valor_inicial] (default 1)
+[INCREMENT BY incremento] (default 1)
+[MAXVALUE valor_maximo_da_sequencia / NOMAXVALUE]
+[MINVALUE valor_minimo_da_sequencia / NOMINVALUE]
+[CYCLE / NOCYCLE] (Se for cíclica, quando atingir o máximo, volta ao início)
+
+Exemplo: CREATE SEQUENCE seq_cliente START WITH 6;
+
+CURRVAR : Retorna o valor corrente da sequencia, exemplo: SELECT nome_sequencia.CURRVAL FROM dual;
+NEXTVAL : Retorna o proximo valor da sequencia, exemplo: SELECT nome_sequencia.NEXTVAL FROM dual;
+
+ALTER SEQUENCE : Altera a sequencia
+
+Exemplo: ALTER SEQUENCE nome_sequencia INCREMENT BY 2;
+
+DROP SEQUENCE : Elimina a sequencia
+
+Exemplo: DROP SEQUENCE nome_sequencia;

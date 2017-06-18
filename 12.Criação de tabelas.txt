@@ -1,0 +1,23 @@
+CREATE TABLE nome_tabela
+( nome_coluna <tipo_dado>[(tamanho)] [DEFAULT expr] [restrições],
+  nome_coluna <tipo_dado>[(tamanho)] [DEFAULT expr] [restrições]
+)
+
+veja:
+
+[DEFAULT expr] : Se após o tipo e tamanho do campo for colocada a palavra DEFAULT sequida de uma expressão, esta representará um valor-padrão utilizado para preencher a coluna no caso de este não ser atribuído explicitamente no momento da inclusão. A expressão pode ser um valor fixo, uma expressão, uma função ou variavél de sistema, como SYSDATE.
+
+exemplo 1:
+CREATE TABLE Nota_Fiscal
+(...
+ ...
+ Dt_Emissao Date Default Sysdate,
+ ...)
+
+exemplo 2: CREATE TABLE ...AS SELECT : Cria e preenche
+
+CREATE TABLE Temporaria
+AS SELECT cd_pais, nm_pais FROM Pais;
+
+CREATE TABLE nome_tabela (nome_coluna [restricao],nome_coluna [restricao]..)
+AS SELECT ...

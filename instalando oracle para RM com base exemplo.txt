@@ -1,0 +1,16 @@
+Instalando o oracle para rm com a Base Exemplo
+
+1) Intalar o Oracle Express Edition
+2)Coligar a senha do administrador para o Express Edition
+3)Criar o usuário rm no gerenciador do banco Express Edition
+4)Instalar a base exemplo oracle e extrair
+5)Entrar no diretório da base exemplo pelo dos e importar com o comando (imp file=[caminho do arquivo.dmp] fromuser=rm touser=rm
+6)Instalar o Client do Oracle(run time).
+7) Configurar o Client do Oracle e o Bde.
+8)Converter a base RM
+9)acessar pelo browser do internet explorer o endereço http://127.0.0.1:8080/apex com o usuário e senha rm.
+10)Escolher a opção SQL e importar o Script tablespace.
+11)Editar o script de usuário e mudar a tablespace temporária somente para 'TEMP'.
+12)Importar o script usuário e o acesso.
+13)Abra o RM labore e verifique se há algum erro.
+14)Caso haja, exetute o comando alter table pcodcalculo modify (descricao varchar2(60)) usando o endereço http://127.0.0.1:8080/apex.

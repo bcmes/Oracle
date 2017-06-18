@@ -1,0 +1,11 @@
+--ANY: Compara cada valor do campo(VALORORIGINAL) com a lista informada, caso seja 
+--     igual a qualqer um dos valores retorna o registro
+SELECT IDLAN,VALORORIGINAL FROM FLAN WHERE VALORORIGINAL=265 OR VALORORIGINAL=428
+SELECT IDLAN,VALORORIGINAL FROM FLAN WHERE VALORORIGINAL = ANY(265,428)
+
+
+--ALL: Compara cada valor do campo(VALORORIGINAL) com todos elementos da lista, caso seja 
+--     igual a todos os valores, retorna o registro
+SELECT IDLAN,VALORORIGINAL FROM FLAN WHERE VALORORIGINAL=265 AND VALORORIGINAL=428
+SELECT IDLAN,VALORORIGINAL FROM FLAN WHERE VALORORIGINAL= ALL(265,428)
+-- O Any eo All pode ser usado com qualquer operador lógico(=,<>,>=,<=,<,>)

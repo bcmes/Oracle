@@ -1,0 +1,65 @@
+** Para relacionamentos que utilizam apenas uma coluna **
+
+REFERENCES:
+
+1) modelo 1
+
+CREATE TABLE Cliente
+(cd_cliente     number(4),
+ nm_cliente     varchar2(65),
+ ds_endereco    varchar2(50),
+ Cd_municipio   number(5)
+ Sg_estado      char(2) CONSTRAINT FK_ESTADO_CLIENTE REFERENCES Estado,
+ nr_cep         varchar2(8),
+ nr_ddd         number(3),
+ nr_fone        number(7),
+ Ie_sexo        char(1)
+)
+
+2) modelo 2
+
+CREATE TABLE Cliente
+(cd_cliente     number(4),
+ nm_cliente     varchar2(65),
+ ds_endereco    varchar2(50),
+ Cd_municipio   number(5),
+ nr_cep         varchar2(8),
+ nr_ddd         number(3),
+ nr_fone        number(7),
+ Ie_sexo        char(1),
+ Sg_estado      char(2) CONSTRAINT FK_ESTADO_CLIENTE REFERENCES Estado
+)
+
+** Para relacionamentos que utilizam mais de uma coluna **
+
+FOREIGN KEY: Tem a mesma função de REFERENCES, mas só pode ser declarado ao final de todas as colunas.
+
+1) modelo 1
+
+CREATE TABLE Cliente
+(cd_cliente     number(4),
+ nm_cliente     varchar2(65),
+ ds_endereco    varchar2(50),
+ Cd_municipio   number(5)
+ Sg_estado      char(2), 
+ nr_cep         varchar2(8),
+ nr_ddd         number(3),
+ nr_fone        number(7),
+ Ie_sexo        char(1),
+CONSTRAINT FK_ESTADO_CLIENTE FOREIGN KEY (sg_Estado) REFERENCES Estado
+)
+
+2) modelo 2 
+
+CREATE TABLE Cliente
+(cd_cliente     number(4),
+ nm_cliente     varchar2(65),
+ ds_endereco    varchar2(50),
+ Cd_municipio   number(5)
+ Sg_estado      char(2), 
+ nr_cep         varchar2(8),
+ nr_ddd         number(3),
+ nr_fone        number(7),
+ Ie_sexo        char(1),
+CONSTRAINT FK_ESTADO_CLIENTE FOREIGN KEY (sg_Estado) REFERENCES Estado (sg_Estado)
+)

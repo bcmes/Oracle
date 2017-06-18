@@ -1,0 +1,4 @@
+(SELECT 
+ TO_CHAR(TRUNC((pfunc.jornadamensal/60), 0)) 
+ ||':'||
+ TO_CHAR(MOD(pfunc.jornadamensal , 60),'00') FROM dual) AS JORNADA_MENSAL

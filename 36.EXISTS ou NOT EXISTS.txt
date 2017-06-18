@@ -1,0 +1,11 @@
+- EXISTS : somente será verdadeiro se a subquery retornar pelo menos uma linha, veja:
+
+select *
+from dual
+where exists (select * from empresa);
+
+- NOT EXISTS : somente será verdadeiro se a subquery não retornar nenhuma linha, veja:
+
+select *
+from dual
+where not exists (select * from empresa);

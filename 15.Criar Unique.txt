@@ -1,0 +1,16 @@
+/*Define um valor unico para coluna*/
+
+1) modelo 1
+
+CREATE TABLE Estado
+(Sg_Estado Char(2),
+ Nm_Estado varchar2(35) CONSTRAINT UN_ESTADO_NM_ESTADO UNIQUE
+)
+
+2) modelo 2
+
+CREATE TABLE Estado
+(Sg_Estado Char(2),
+ Nm_Estado varchar2(35),
+CONSTRAINT UN_ESTADO_NM_ESTADO UNIQUE (nm_estado)
+);

@@ -1,0 +1,6 @@
+CREATE USER nome_do_usuário
+IDENTIFIED [BY senha / EXTERNALLY] /*A 1° é uma senha especifica para o BD, a 2° utiliza a mesma senha do SO.*/
+DEFAULT TABLESPACE nome_da_tablespace /*Permite especificar qual o local físico em que os objetos criados por este usuário será armazenado.*/
+PROFILE nome_do_profile /*Define os limites deste usuário*/
+PASSWORD EXPIRE /* Faz com que a senha do usuario expire antes da primeira conexão, obrigando que uma nova senha seja digitada*/
+ACCOUNT [LOCK / UNLOCK] /*Cria o usuário bloqueado(lock, nao poderá se conectar) ou desbloqueado(unlock)*/

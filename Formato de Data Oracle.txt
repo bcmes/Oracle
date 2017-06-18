@@ -1,0 +1,25 @@
+On 7/21/06, douglasweb <[EMAIL PROTECTED]> wrote:
+>
+>  Caro colega segue abaixo trabalhando com datas no Oracle
+> select last_day(sysdate)                    ultimo_dia_mes,
+>        '01-'||to_char(sysdate,('mm-yy'))    primeiro_dia_mes,
+>        add_months(sysdate,2)                soma_meses,
+>        sysdate + 60                         soma_dias,   -- <> de meses
+>        months_between(sysdate,sysdate+120)  meses_entre_datas,
+>        next_day(sysdate,'monday')           proxima_2_feira,
+>        to_char(sysdate,'YYYYMMDD hh:mi:ss') data_hora,
+>        to_char(sysdate,'Q')                 trimestre,
+>        to_char(sysdate,'DAY')               dia,
+>        to_char(sysdate,'DY')                dia_abrev,
+>        to_char(sysdate,'D')                 dia_semana_num,
+>        to_char(sysdate,'DDD')               dia_do_ano,
+>        to_char(sysdate,'SCC')               século,
+>        to_char(sysdate,'W')                 semana_mes,
+>        to_char(sysdate,'WW')                semana_ano,
+>        to_char(sysdate,'YEAR')              ano_descr,
+>        to_char(sysdate,'RM')                mes_romano
+> from dual;
+>
+> Espero ter ajudado !!!
+>
+> Douglas.

@@ -1,0 +1,4 @@
+GRANT nome_do_privilégio [,vários nomes de privilégios]
+ON nome_do_objeto
+TO [nome_de_usuário [,vários nomes de usuário] / ROLE / PUBLIC]~
+[WITH ADMIN OPTION] /*Permite ao usuário que está recebendo os privilégios concedê-lo a outros usuários*/

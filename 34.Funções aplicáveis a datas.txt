@@ -1,0 +1,19 @@
+-SYSDATE : Data do sistema
+
+-Last_Day (data) : O último dia do mês da data informada
+
+-Next_Day(date[,dia_da_semana_por_extenso]) : retorna a data na procima semana da semana informada
+
+-Add_Months(date,número) : retorna a data adicionada da qtd de meses informado
+
+-Trunc(data[,formato]) : Retorna a data referente ao inicio do período corrente, conforme o formato (D,MM,YY...)
+
+D-inicio da semana
+MM-inicio do mes
+YY-inicio do ano
+
+-ROUND(data[,formato]) : Retorna a data correspondente ao inicio do periodo se o formato for MM e o dia estiver entre 1 e 15; retorna o mês corrente e ao início do próximo mês se o dia estiver entre 16 e 31.
+
+-MONTHS_BETWEEN(data,data) : Retorna o numero de meses entre as datas com fração de dias para completar mais um mes
+
+-EXTRACT(parte_da_data FROM campo) : Extrai e retorna a parte da data solicitada que pode ser: YEAR,MONTH,DAY,HOUR,MINUTE,SECOND

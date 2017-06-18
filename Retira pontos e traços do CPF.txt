@@ -1,0 +1,1 @@
+select REGEXP_REPLACE (cgccfo, '[.-//-]','') as retiraCaracteres FROM fcfo

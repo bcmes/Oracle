@@ -1,0 +1,32 @@
+Para cada linha retornada por uma consulta, o ROWNUM retorna um número indicando a sequência em que o banco selecionou a linha na consulta da tabela, Veja:
+
+SELECT ROWNUM, CHAPA FROM PFUNC
+
+O ROWNUM normalmente é utilizado para limitar a qtd de linhas retornadas em uma consulta, ROWNUM < x, ROWNUM = x, veja:
+
+SELECT * FROM PFUNC WHERE ROWNUM<10
+
+VEJA QUE:
+
+SELECT *
+FROM FORNECEDOR
+WHERE ROWNUM<4
+ORDER BY DT_NASCIMENTO
+
+-->IRA RETORNA ATÉ 3 LINHAS E DEPOIS IRÁ ORDENA-LAS
+
+VEJA QUE: 
+
+SELECT *
+FROM (SELECT NR_FORNECEDOR,NM_FORNECEDOR,DT_NASCIMENTO
+      FROM FORNECEDOR
+      ORDER BY DT_NASCIMENTO)
+WHERE ROWNUM<4
+
+-->IRA ORDENAR E DEPOIS RETORNAR ATÉ 3 LINHAS. OBSERVE QUE O ROWNUM SE EXECUTA ANTES DO ORDER BY, EXECETO QUANDO ELE ESTÁ MAIS EXTERNO, NO CASO DE SUBCONSULTAS, COMO A LISTADA ACIMA.
+
+O ROWNUM também pode ser utilizado para inserir valores unicos para cada linha de uma tabela, veja
+
+UPDATE pais SET nr_pais=ROWNUM;
+
+--> Irá sequenciar o campo acima.

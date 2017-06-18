@@ -1,0 +1,4 @@
+CREATE USER nome IDENTIFIED BY senha;
+GRANT ALL PRIVILEGES TO nome;
+
+/*A primeira linha cria um usuario com uma senha. A segunda concede TODOS os privilegios a ele*/

@@ -1,0 +1,1 @@
+TRUNC(MONTHS_BETWEEN(sysdate,p.dtnascimento)/12)

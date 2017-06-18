@@ -1,0 +1,3 @@
+DROP TABLE tabela;
+
+/*Para que a tabela em questão possa ser eliminada, as foreign keys de outras tabelas associadas a ela devem ser eliminadas.*/

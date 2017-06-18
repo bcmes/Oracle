@@ -1,0 +1,61 @@
+TO_CHAR (data/numero [, formato_char]) : Converte um valor do tipo data ou número para char, exemplo:
+
+1. SELECT TO_CHAR(dt_nascimento, '"Nascido em" DD/MM/YYYY' FROM fornecedor;
+1.1 Saída--> Nascido em 26/04/1987
+
+
+
+################### TABELA ###################
+**Datas**
+CC-Século
+SCC-Século precedido de "-" quando for (BC)
+YYYY-Ano com 4 posições
+SYYYY-Ano com 4 posições precedido de "-" quando for (BC)
+YYY ou YY ou Y-Ano com 3, 2 ou 1 posição
+YEAR-Ano por extenso
+SYEAR-Ano por extenso precedido de "-" quando for (BC)
+BC ou AD-Indicador de antes de cristo (BC) ou depois de cristo (AD)
+B.C ou A.D-Idem anterior
+Q-Trimestre
+MM-Mês em representação numérica (01-12)
+MONTH-Mês por extenso
+MON-Abreviação com as 3 primeiras letras do mês
+RM-Mês em algarismos romanos
+WW-Semana do ano(01-52)
+W-Semana do mês(1-5)
+DDD-Dia do ano(1-366)
+DD-Dia do mês(1-31)
+D-Dia da semana(1-7)
+DAY-Dia da semana por extenso
+DY-Abreviação com 3 letras do dia da semana
+J-Data no formato juliano(número de dias a partir de 1/01/4712 BC)
+AM ou PM-Antes do meio-dia(AM) e depois do meio-dia(PM)
+A.M ou P.M-Idem ao anterior
+HH ou HH12-Hora do dia(1-12)
+HH24-Hora do dia(1-24)
+MI-Minutos(1-59)
+SS-Segundo(1-59)
+SSSSS-Segundo após a meia-noite(0-86399)
+
+-->Prefixo:
+FM-Retirar brancos à esquerda e zeros à direita
+
+-->Sufixo:
+TH-Número ordinal
+SP-Número por extenso
+
+**Números**
+9-Normal
+.-Para casas decimais(ponto)
+G-Para casas decimais
+,-Separador de algarismos(vírgula/milhar)
+D-Separar de algarismos(milhar)
+
+-->Prefixos
+0-Com zeros no início
+$-Com o caractere $ no início
+B-Valor zerado é exibido em branco
+
+-->Sufixos
+MI-O "-" de números negativos aparecerá no final do número
+PR-Números negativos aparecem no formaro "<n>"

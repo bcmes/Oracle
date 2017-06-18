@@ -1,0 +1,12 @@
+select d.chapa 
+,dep.nome
+,dep.sexo
+,FLOOR(FLOOR(MONTHS_BETWEEN(TO_DATE(SYSDATE),dep.DTNASCIMENTO))/12) AS IDADE
+,cp.descricao as parentesco/*O 'Excluido' é o funcionário*/
+,(CASE WHEN cp.codinterno in('6','7','8','9','A','D','T','G','P','X','S') then 'sim' else 'nao' end) agregado
+,(select descricao from gconsist where CODTABELA='03' and codinterno=d.unimed) as plano
+from pfdepend dep inner join pfdependcompl d on dep.chapa=d.chapa and dep.nrodepend=d.nrodepend
+                  left outer join pcodparent cp on cp.codinterno=dep.grauparentesco
+                  inner join pfunc f on dep.chapa=f.chapa
+where (d.unimed<>'99' and d.unimed is not null) and f.codsituacao<>'D'
+order by d.chapa

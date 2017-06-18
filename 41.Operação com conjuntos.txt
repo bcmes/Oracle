@@ -1,0 +1,29 @@
+-->União de conjuntos<--
+--Union : Linhas iguais resultantes das duas seleções aparecerão apenas uma vez.
+--Union All : Caso queira que as duplicidades sejam mostradas.
+
+-->Interseção de conjuntos<--
+--Intersect : Resulta na interseção das duas seleções
+SELECT cd_municipio, nm_municipio
+FROM municipio
+WHERE cd_municipio IN (SELECT cd_municipio FROM fornecedor)
+
+INTERSECT
+
+SELECT cd_municipio, nm_municipio
+FROM municipio
+WHERE cd_municipio IN (SELECT cd_municipio FROM cliente)
+--Retornará somente os municipios em comun(interseção) entre os dois conjuntos(selects)
+
+-->Diferença de conjuntos<--
+--Minus: Mostra os elementos resultantes de uma seleção que não estejam contidas na outra.
+SELECT cd_municipio, nm_municipio
+FROM municipio
+WHERE cd_municipio IN (SELECT cd_municipio FROM fornecedor)
+
+MINUS
+
+SELECT cd_municipio, nm_municipio
+FROM municipio
+WHERE cd_municipio IN (SELECT cd_municipio FROM cliente)
+--Mostra os municípios nos quais existem fornecedores mas não existem clientes

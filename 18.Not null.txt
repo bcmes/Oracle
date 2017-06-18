@@ -1,0 +1,14 @@
+/*Somente pode ser declarado junto a coluna*/
+
+
+CREATE TABLE Cliente
+(cd_cliente     number(4),
+ nm_cliente     varchar2(65) NOT NULL,
+ ds_endereco    varchar2(50) NOT NULL,
+ Cd_municipio   number(5)
+ Sg_estado      char(2),
+ nr_cep         varchar2(8),
+ nr_ddd         number(3),
+ nr_fone        number(7),
+ Ie_sexo        char(1)
+)

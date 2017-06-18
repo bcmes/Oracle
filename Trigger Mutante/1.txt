@@ -1,0 +1,44 @@
+-- Start of DDL Script for Package RM.VARIAVEIS_RM
+-- Generated 13/10/2010 14:33:51 from RM@TESTENOVO
+
+CREATE OR REPLACE 
+PACKAGE variaveis_rm AS
+/* Campos AABONFUN
+   Trigger 1: LIMITAABONO1
+    Trigger 1: LIMITAABONO2
+*/
+  v_codabono    AABONFUN.CODABONO%TYPE;
+  v_chapa       AABONFUN.CHAPA%TYPE;
+
+/*Campos PFUNC
+  Trigger 1: PROIBE_DUPLICIDADE_FCFO_P1
+  Trigger 2: PROIBE_DUPLICIDADE_FCFO_P2
+*/
+  vCodCfo        FCFO.codcfo%TYPE;
+  vCgcCfo        FCFO.cgccfo%TYPE;
+  vNome          FCFO.nome%TYPE;
+  vNomeFantasia  FCFO.nomefantasia%TYPE;
+  vAtivo         FCFO.ativo%TYPE;
+
+/*Campos VReqAumentoQuadro
+  Trigger 1: PROIBE_INCONSISTENCIA_RAQ_P1
+  Trigger 2: PROIBE_INCONSISTENCIA_RAQ_P2
+*/
+  vCodTabela     VReqAumentoQuadro.codtabelasalarial%TYPE;
+  vNivel         VReqAumentoQuadro.codnivelsalarial%TYPE;
+  vFaixa         VReqAumentoQuadro.codfaixasalarial%TYPE;
+  vSalario       VReqAumentoQuadro.vlrsalario%TYPE;
+    
+END VARIAVEIS_RM;
+/*
+Obs1:. Qualquer tipo de alteração neste pacote implica OBRIGATÓRIAMENTE na 
+        recompilação das triggers listadas acima.
+         
+Obs2:. Este pacote deve ser usado somente para declarações de variavéis a serem
+        usada em estruturas de tratamento de triggers mutantes para o CorporeRM. 
+*/
+/
+
+
+
+-- End of DDL Script for Package RM.VARIAVEIS_RM

@@ -1,0 +1,13 @@
+-Insert simples de uma linha
+INSERT INTO tabela (campo,campo2) VALUES ('1',NULL);
+
+-Insert de uma linha com variáveis
+INSERT INTO tabela (campo,campo2,campo3) VALUES ('&var1',NULL,&var2);
+
+->Nomes de variaveis são precedidos de &. Quando alfanumericos ou datas deve estar entre aspas.
+
+
+-INSERT INTO ..SELECT
+INSERT INTO Teste_Temp (cd_teste, vl_teste)
+(SELECT cd_pais, length(nm_pais) FROM Pais)
+

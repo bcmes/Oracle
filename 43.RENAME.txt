@@ -1,0 +1,3 @@
+RENAME : Altera o nome de uma tabela
+
+RENAME nome_antigo_da_tabela TO nome_novo_da_tabela

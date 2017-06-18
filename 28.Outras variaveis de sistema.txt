@@ -1,0 +1,20 @@
+1. ArraySize - Especifica o número de linhas de uma seleção que será trazido do banco de dados por vez.
+
+SET ARRAYSIZE n onde 1<n<5000
+
+*quanto maior n mais rapido o retorno, porém irá consumir mais memória.
+
+2.AUTOCOMMIT - SET AUTOCOMMIT OFF/ON/IMMEDIATE/n
+
+3.BLOCKTERMINATOR - SET BLOCKTERMINATOR c
+
+4.ECHO - SET ECHO ON/OFF
+
+5.PAUSE - SET PAUSE OFF/ON/texto
+
+6.SERVEROUTPUT - SET SERVEROUTPUT OFF/ON [SIZE n] [FORMAT {WRAPPED/WORD_WRAPPED/TRUNCATED}] : Permite o controle das saídas, com o comando DBMS_OUTPUT.PUT_LINE, dentro de procedures ou blocos PL/SQL.
+->SIZE - Especifica o número de bytes de saída que podem ser buferizados. Entre 2.000 e 1.000.000
+
+7. SQLPROMPT - SET SQLPROMPT texto : Altera o nome do prompt do ambiente SQL*PLUS.
+
+8. SQLTERMINATOR - SET SQLTERMINATOR c/OFF/ON : Especifica qual o caractere que encerra e executa o comando atual e tem ; como valor-padrão. Se o seu valor for OFF não será aceito caractere de finalização, o comando será encerrado com uma linha em branco e será executado com o comando RUN ou /

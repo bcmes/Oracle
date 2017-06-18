@@ -1,0 +1,1 @@
+O alias num select pode vir com aspas duplas em caso de acento
